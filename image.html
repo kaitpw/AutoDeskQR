@@ -17,15 +17,15 @@ var image2 = new Image();
 
 // Once the first image has loaded, draw it onto the canvas
 image1.onload = function() {
-  var x = 250 - image1.width / 2;
-  var y = 250 - image1.height / 2;
-  ctx.drawImage(image1, x, y);
+  var x = 250 - 200; // 200 is half the width of the image
+  var y = 250 - 200; // 200 is half the height of the image
+  ctx.drawImage(image1, 0, 0, image1.width, image1.height, x, y, 400, 400);
 
   // Once the second image has loaded, draw it on top of the first image
   image2.onload = function() {
-    var x = 250 - image2.width / 2;
-    var y = 250 - image2.height / 2;
-    ctx.drawImage(image2, x, y);
+    var x = 250 - 50; // 50 is half the width of the image
+    var y = 250 - 50; // 50 is half the height of the image
+    ctx.drawImage(image2, 0, 0, image2.width, image2.height, x, y, 100, 100);
   };
   image2.src = "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/lgxtpdzk80y7wudnnzac";  // Replace with the URL of the second image
 };
